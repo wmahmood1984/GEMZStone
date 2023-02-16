@@ -9,6 +9,7 @@ import { getContract } from "../utils";
 
 function NftMinting() {
 const [balance,setBalance] = useState(0)
+const [totalSupply,settotalSupply] = useState(0)
 const [open,setOpen] = useState(0)
 const [toggle,setToggle] = useState(0)
 const [BUSDbalance,setBUSDbalance] = useState(0)
@@ -40,6 +41,10 @@ const abc = async ()=>{
     setGEMZbalance(formatEther (_GEMZbal,0))
     const _GEMZIbalance = await IOUContract.balanceOf(account)
     setGEMZIbalance(formatEther (_GEMZIbalance,0))
+
+    const _tSupply = await contract.create_amount()
+    settotalSupply(formatUnits(_tSupply,0))
+
   }
 
 
@@ -336,7 +341,7 @@ const MintGemzI = async ()=>{
                   </div>
                 </div>
                 <div className="nft_minting_cleft_bbtn">
-                  <a href="#">{balance && balance}/1200 Total NFT</a>
+                  <a href="#">{totalSupply && totalSupply}/1200 Total NFT</a>
                 </div>
                 {/* <div class="nft_minting_cleft_middle_btns">
                       <a href="#">0/500 Total NFT</a>
