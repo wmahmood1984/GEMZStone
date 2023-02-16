@@ -1,0 +1,648 @@
+
+@media all and (min-width: 1600px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+	max-width: 1080px;
+}
+
+
+
+}
+
+
+
+@media all and (max-width: 1530px){
+.simple_task_main {
+	padding: 70px 0px 15px 0px;
+}
+.banner_image {
+	margin-bottom: 90px;
+}
+h1 {
+	font-size: 40px;
+}
+.simple_task_content_title h2 {
+	padding: 110px 0px 30px 0px;
+}
+h2 {
+	font-size: 30px;
+}
+.smptscon_left a {
+	font-size: 20px;
+}
+.smptscon_left a img {
+	width: 115px;
+	margin-top: 20px;
+}
+.smptscon_middle p {
+	font-size: 20px;
+	max-width: 265px;
+	line-height: 33px;
+}
+.smptscon_middle {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.simple_task_contents {
+	max-width: 785px;
+	margin-bottom: 80px;
+}
+.claim_airdrop_tbtn a {
+	font-size: 20px;
+	border: 3px solid rgba(23, 3, 3, 0.51);
+	border-radius: 35px;
+	padding: 8px 60px;
+	margin-bottom: 40px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 30px;
+	margin: 25px 0px 70px 0px;
+}
+.claiconsi_p p {
+	font-size: 20px;
+}
+.claim_airdrop_contents_single {
+	margin-top: 10px;
+}
+.claim_airdrop_contents {
+	border: 3px solid rgba(0, 0, 0, 0.56);
+	border-radius: 30px;
+	padding: 15px 30px 30px 30px;
+}
+.claim_airdropbtn_left p {
+	width: 165px;
+	height: 72px;
+	font-size: 20px;
+}
+.claim_airdropbtn_right a {
+	padding: 7px 18px;
+	font-size: 20px;
+}
+.redeem_airdrop_title h1 {
+	font-size: 33px;
+}
+.redeem_airdrop_content_title h1 {
+	margin-top: 50px;
+	font-size: 33px;
+}
+.redaircon_cont_title p {
+	font-size: 25px;
+	margin-bottom: 2px;
+}
+.redaircon_cont_amount span {
+	font-size: 30px;
+}
+.redaircon_cont_amount input {
+	font-size: 30px;
+	width: 150px;
+	height: 65px;
+}
+.redaircon_cont_amount a {
+	width: 140px;
+	height: 58px;
+	font-size: 23px;
+}
+.redaircon_arrow img {
+	width: 110px;
+	margin-top: 50px;
+}
+.redeem_airdrop_main {
+	padding: 90px 0px 150px 0px;
+}
+.redeem_airdrop_contents {
+	max-width: 500px;
+	margin-top: 50px;
+}
+.claim_airdrop_contents_mw {
+	max-width: 750px;
+}
+.redaircon_cont_box p {
+	font-size: 24px;
+}
+.redaircon_cont_amount input {
+	font-size: 25px;
+	width: 180px;
+	height: 55px;
+}
+.redaircon_cont_amount {
+	margin-top: 60px;
+}
+.redaircon_cont_amount1::after {
+	font-size: 23px;
+}
+.redeem_airdrop {
+	padding: 45px 40px 90px 40px;
+	max-width: 860px;
+}
+
+
+
+}
+
+
+
+@media all and (max-width: 1199px){
+.claiconsi_p p {
+	font-size: 25px;
+}
+.simple_task_main {
+	padding: 55px 0px 15px 0px;
+}
+.banner_image {
+	margin-bottom: 60px;
+}
+.claim_airdrop_contents_all {
+	max-width: 100%;
+}
+.claim_airdropbtn_left.claim_airdropbtn_left_top p {
+	margin-right: 60px;
+}
+
+}
+
+@media all and (max-width: 991px){
+.simple_task_content_title h2 {
+	padding: 100px 0px 55px 0px;
+}
+h1 {
+	font-size: 50px;
+}
+h2 {
+	font-size: 35px;
+}
+.smptscon_left a {
+	font-size: 22px;
+}
+.smptscon_left a img {
+	width: 110px;
+	margin-top: 30px;
+}
+.smptscon_middle p {
+	font-size: 26px;
+	padding: 15px 10px;
+	line-height: 35px;
+}
+.claim_airdrop_title h1 {
+	font-size: 29px;
+}
+.simple_task_contents {
+	margin-bottom: 90px;
+}
+.claim_airdrop_contents_all {
+	margin-top: 60px;
+	padding: 70px 40px 100px 40px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 30px;
+}
+.claim_airdrop_contents {
+	padding: 15px 35px 35px 35px;
+	border: 3px solid rgba(0, 0, 0, 0.56);
+	border-radius: 30px;
+}
+.claiconsi_p p {
+	font-size: 19px;
+}
+.claim_airdrop_contents_single {
+	margin-top: 12px;
+}
+.claim_airdropbtn_left p {
+	width: 190px;
+	height: 70px;
+	font-size: 21px;
+	border: 2px solid rgba(0, 0, 0, 0.49);
+}
+.claim_airdropbtn_right a {
+	margin-left: 5px;
+	border-radius: 8px;
+	border: 2px solid rgba(0, 0, 0, 0.51);
+	padding: 7px 19px;
+	font-size: 16px;
+}
+.claim_airdropbtn_right a:first-child {
+	 margin-left: 0px; 
+}
+.redeem_airdrop_main {
+	padding: 90px 0px 140px 0px;
+}
+.redeem_airdrop_title h1 {
+	font-size: 30px;
+}
+.redeem_airdrop_content_title h1 {
+	text-align: center;
+	margin-top: 60px;
+	color: #FFF;
+	font-size: 30px;
+}
+.redaircon_cont_title p {
+	font-size: 26px;
+}
+.redaircon_cont_box p {
+	font-size: 20px;
+}
+.redaircon_arrow img {
+	width: 130px;
+	height: auto;
+	margin-top: 45px;
+}
+.redaircon_cont_amount span {
+	font-size: 25px;
+}
+.redaircon_cont_amount input {
+	font-size: 20px;
+	width: 160px;
+	height: 50px;
+}
+.redaircon_cont_amount a {
+	border: 3px solid rgba(0, 0, 0, 0.49);
+	width: 125px;
+	height: 52px;
+	font-size: 20px;
+}
+.banner_image img {
+	height: auto;
+}
+.claim_airdrop_btns.claim_airdrop_btns_top {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.claim_airdropbtn_right.claim_airdropbtn_right_top {
+	margin-top: 20px;
+}
+.claim_airdropbtn_left.claim_airdropbtn_left_top p {
+	border-radius: 31px;
+	width: 180px;
+	height: 60px;
+	font-size: 16px;
+	margin-right: 0px;
+}
+.banner_image {
+	margin-bottom: 60px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 26px;
+	margin: 25px 0px 45px 0px;
+}
+.claim_airdrop_contents_single {
+	margin-top: 8px;
+}
+
+
+
+}
+
+
+
+
+
+@media all and (max-width: 767px){
+.simple_task_content_title h2 {
+	padding: 80px 0px 45px 0px;
+}
+.smptscon_left a {
+	font-size: 15px;
+}
+.smptscon_left a img {
+	width: 80px;
+	margin-top: 20px;
+}
+.smptscon_middle p {
+	font-size: 19px;
+	padding: 15px 10px;
+	line-height: 28px;
+}
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 28px;
+}
+.claim_airdrop_title h1 {
+	font-size: 29px;
+}
+.claim_airdrop_contents_all {
+	margin-top: 50px;
+	padding: 55px 25px 65px 25px;
+}
+.claiconsi_p p {
+	font-size: 14px;
+}
+.claim_airdrop_contents {
+	padding: 10px 25px 25px 25px;
+	border: 2px solid rgba(0, 0, 0, 0.56);
+	border-radius: 20px;
+	margin: 10px 0px 55px 0px;
+}
+.claim_airdrop_contents_single {
+	margin-top: 7px;
+}
+.claim_airdropbtn_left p {
+	width: 155px;
+	height: 65px;
+	font-size: 18px;
+	border: 2px solid rgba(0, 0, 0, 0.49);
+}
+.claim_airdropbtn_right a {
+	margin-left: 0px;
+	border-radius: 6px;
+	border: 2px solid rgba(0, 0, 0, 0.51);
+	padding: 6px 15px;
+	font-size: 12px;
+}
+.claim_airdrop_btns {
+	max-width: 90%;
+	margin-top: 35px;
+}
+.redaircon_cont_title p {
+	font-size: 20px;
+}
+.redaircon_cont_box p {
+	font-size: 17px;
+	width: 160px;
+	height: 56px;
+}
+.redaircon_cont_amount span {
+	font-size: 20px;
+}
+.redaircon_cont_amount input {
+	font-size: 16px;
+	width: 140px;
+	height: 50px;
+}
+.redaircon_cont_amount {
+	margin-top: 15px;
+}
+.redaircon_arrow img {
+	width: 90px;
+	margin-top: 43px;
+}
+.redaircon_cont_amount a {
+	width: 145px;
+	height: 53px;
+	font-size: 18px;
+}
+.redeem_airdrop_main {
+	padding: 70px 0px 100px 0px;
+}
+.redaircon_cont_amount1::after {
+	top: 105%;
+	-webkit-transform: inherit;
+	    -ms-transform: inherit;
+	        transform: inherit;
+	right: 0px;
+	left: 0;
+	margin: auto;
+	text-align: center;
+	font-size: 17px;
+}
+.claim_airdropbtn_right_top a img {
+	width: 35px;
+	height: auto;
+}
+
+}
+
+
+
+
+
+
+@media all and (max-width: 575px){
+.claim_airdrop_btns {
+	max-width: 100%;
+	margin-top: 30px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.claim_airdropbtn_right {
+	margin-top: 18px;
+}
+.redeem_airdrop_contents {
+	margin-top: 75px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.redaircon_cont {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 100%;
+}
+.redaircon_cont_amount {
+	margin-top: 0px;
+}
+.redaircon_arrow img {
+	width: 100px;
+	margin-top: 0px;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	margin-left: 62px;
+}
+.redaircon_arrow {
+	padding: 55px 0px;
+}
+.claim_airdropbtn_right a {
+	border-radius: 6px;
+	padding: 8px 20px;
+	font-size: 16px;
+}
+.smptscon_leftde {
+	padding-right: 30px;
+}
+.claim_airdropbtn_right.claim_airdropbtn_right_top a {
+	margin-left: 12px;
+	padding: 9px 12px 12px 15px;
+	font-size: 12px;
+}
+.claim_airdropbtn_right_top a img {
+	width: 30px;
+}
+.banner_image {
+	margin-bottom: 50px;
+}
+.claim_airdrop_tbtn a {
+	font-size: 18px;
+	padding: 8px 40px;
+	margin-bottom: 30px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 21px;
+}
+.redeem_airdrop_title h1 {
+	font-size: 29px;
+}
+.redaircon_cont_amount1::after {
+	top: -28px;
+}
+
+
+}
+
+
+
+
+
+@media all and (max-width: 450px){
+.simple_task_main {
+	padding: 40px 0px 15px 0px;
+}
+h1 {
+	font-size: 35px;
+}
+.simple_task_content_title h2 {
+	padding: 70px 0px 40px 0px;
+}
+h2 {
+	font-size: 25px;
+}
+.smptscon_left a img {
+	width: 65px;
+}
+.smptscon_middle p {
+	font-size: 14px;
+	padding: 10px 10px;
+	line-height: 25px;
+}
+.smptscon_middle {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 39%;
+	        flex: 0 0 39%;
+}
+.smptscon_leftde {
+	padding-right: 15px;
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 29%;
+	        flex: 0 0 29%;
+}
+.smptscon_right {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 32%;
+	        flex: 0 0 32%;
+}
+.claim_airdrop_title h1 {
+	font-size: 25px;
+}
+.simple_task_contents {
+	margin-bottom: 60px;
+}
+.claim_airdrop_contents_all {
+	margin-top: 33px;
+	padding: 30px 10px 50px 10px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 22px;
+}
+.claiconsi_p p {
+	font-size: 12px;
+}
+.claim_airdrop_contents_single {
+	margin-top: 5px;
+}
+.claim_airdrop_contents {
+	padding: 5px 15px 15px 15px;
+	border: 1px solid rgba(0, 0, 0, 0.56);
+	border-radius: 20px;
+	margin: 10px 0px 40px 0px;
+}
+.redeem_airdrop_title h1 {
+	font-size: 26px;
+}
+.redeem_airdrop_content_title h1 {
+	margin-top: 45px;
+	font-size: 26px;
+}
+.redaircon_cont_box p {
+	font-size: 16px;
+}
+.redaircon_cont_amount input {
+	font-size: 16px;
+	width: 140px;
+	height: 54px;
+}
+.redaircon_cont_title p {
+	font-size: 18px;
+}
+.redaircon_cont_amount span {
+	font-size: 18px;
+}
+.redaircon_cont_amount a {
+	width: 130px;
+	height: 55px;
+	font-size: 16px;
+}
+.redaircon_arrow img {
+    width: 90px;
+    margin-left: 75px;
+}
+.redaircon_arrow {
+	padding: 45px 0px;
+}
+.redeem_airdrop {
+	padding: 25px 10px 50px 10px;
+}
+.redeem_airdrop_main {
+	padding: 55px 0px 70px 0px;
+}
+.banner_image {
+	margin-bottom: 40px;
+}
+.simple_task_content_title h2 {
+	padding: 40px 0px 25px 0px;
+}
+.redeem_airdrop_main {
+	padding: 40px 0px 50px 0px;
+}
+.claim_airdropbtn_left.claim_airdropbtn_left_top p {
+	width: 145px;
+	height: 50px;
+	font-size: 20px;
+}
+.claim_airdrop_tbtn a {
+	font-size: 16px;
+	padding: 7px 27px;
+	margin-bottom: 25px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 18px;
+	margin: 15px 0px 20px 0px;
+}
+.claim_airdropbtn_left p {
+	width: 140px;
+	height: 55px;
+	font-size: 18px;
+	border-radius: 35px;
+}
+.claim_airdropbtn_right a {
+	border-radius: 30px;
+}
+
+
+
+
+
+}
+
+
+
+
+

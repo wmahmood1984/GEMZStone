@@ -4,17 +4,18 @@ import { FaTimes } from "react-icons/fa";
 // import Logo from "../../assets/logo.png";
 import "./style.css";
 import { useWeb3React } from "@web3-react/core";
-import { LaunchPadABI, LaunchPadAdd } from "../../config";
+import { chainIdSelected, LaunchPadABI, LaunchPadAdd } from "../../config";
 
 import { formatUnits } from "ethers/lib/utils";
 import { getContract, shortAddress } from "../../web3/helpers";
 import { ChainChangeContext } from "../../context/chainChangeContext";
 import { WalletModalContext } from "../../context/walletModalContext";
+import { toast } from "react-toastify";
 
 const Header = ({ show, setShow }) => {
   const { account, library, chainId } = useWeb3React();
   const [tier, setTier] = useState();
-  const chain = chainId ? chainId : chainIdSelected;
+  const network = chainId ? chainId : chainIdSelected;
 
   const { currentChain, openChainModal } = useContext(ChainChangeContext);
   const { connectHandler } = useContext(WalletModalContext);
@@ -59,7 +60,7 @@ const Header = ({ show, setShow }) => {
     try {
       window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: web3.utils.toHex(network) }],
+        params: [{ chainId: "0x97" }],
       });
     } catch (err) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -111,7 +112,7 @@ const Header = ({ show, setShow }) => {
         >
           <img
             className=" w-3.5 md:w-5"
-            src={window.ethereum?.networkVersion == 97 ? BSC : ETH}
+            src={window.ethereum?.networkVersion == 97 ? null : null}
             alt=""
           />
           <span style={{ marginLeft: "15px" }} className="hidden sm:block">

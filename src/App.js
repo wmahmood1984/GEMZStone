@@ -1,73 +1,70 @@
-import "./App.css";
-import Home from "./pages/home";
-import CreateToken from "./pages/createToken";
-import ProjectPreview from "./pages/projectPreview";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { ToastContainer } from "react-toastify";
-import Locktoken from "./pages/LockToken";
-import Landing from "./pages/createToken/landing";
-import { Toaster } from "react-hot-toast";
-import TokenList from "./pages/TokenList";
-import LockDetails from "./pages/LockDetails";
-import LockRecordDetails from "./pages/LockRecordDetails";
-import MyTokens from "./pages/MyTokens";
-import LpLockList from "./pages/LpLockList";
-import TokenCreateSuccess from "./pages/tokenCreateSuccess";
-import EditPresale from "./pages/editpresale";
-import utc from "dayjs/plugin/utc";
-import dayjs from "dayjs";
-import LockRecordDetails2 from "./pages/LockRecordDetails2";
-dayjs.extend(utc);
+import { useEffect } from "react";
+import WebFont from "webfontloader";
+
+import Header from "./components/Header";
+
+// import Home from "./pages/Home";
+import Fairlaunch from "./components/Fairlaunch";
+import GemzChatAI from "./components/GemzChatAI";
+import SelfMining from "./components/SelfMining";
+import Staking from "./components/Staking";
+import MarginTrade from "./components/MarginTrade";
+import LendAndBorrow from "./components/LendAndBorrow";
+import Exchange from "./components/Exchange";
+import CrossChainSwap from "./components/CrossChainSwap";
+import TokenBridge from "./components/TokenBridge";
+import ArbOpportunity from "./components/ArbOpportunity";
+import NftMinting from "./components/NftMinting";
+import NftMarket from "./components/NftMarket";
+import NftStaking from "./components/NftStaking";
+import TokenGatedContents from "./components/TokenGatedContents";
+import Metaverse from "./components/Metaverse";
+import FiatOnRamp from "./components/FiatOnRamp"; //add images from here
+import SwapAndLP from "./components/SwapAndLP";
+import HowToJoinWhitelist from "./components/HowToJoinWhitelist";
+import Home from "./components/Home";
+import Airdrop from "./components/Airdrop";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#824CF4",
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Oxygen", "Inter", "sans-serif", "Chilanka"],
       },
-    },
-    typography: {
-      fontFamily: ["Poppins", "sans-serif"].join(","),
-    },
-  });
+    });
+  }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Toaster
-        toastOptions={{
-          className: 'text-sm z-[999999999]" ',
-          style: {
-            border: "1px solid #713200",
-            color: "#713200",
-          },
-        }}
-      />
-      <BrowserRouter>
-        <Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
-          <Route path="createPresale" element={<CreateToken />} />
-          <Route path="preview" element={<ProjectPreview />} />
-          <Route path="preview/:params" element={<ProjectPreview />} />
-          <Route path="lockToken" element={<Locktoken />} />
-          <Route path="landing" element={<Landing />} />
-          <Route path="token_list" element={<TokenList />} />
-          <Route path="token_list/details" element={<LockDetails />} />
-          <Route path="token_list/details/:params" element={<LockDetails />} />
+          <Route path="airdrop" element={<Airdrop />} />
+          <Route path="fair-launch" element={<Fairlaunch />} />
+          <Route path="gemzs-chatAI" element={<GemzChatAI />} />
+          <Route path="self-mining" element={<SelfMining />} />
+          <Route path="staking" element={<Staking />} />
+          <Route path="fiat-on-ramp" element={<FiatOnRamp />} />
+          <Route path="swap-lp" element={<SwapAndLP />} />
+          <Route path="margin-trade-gemzs" element={<MarginTrade />} />
+          <Route path="lend-borrow-gemzs" element={<LendAndBorrow />} />
+          <Route path="exchange" element={<Exchange />} />
+          <Route path="cross-chainswap" element={<CrossChainSwap />} />
+          <Route path="token-bridge" element={<TokenBridge />} />
+          <Route path="arb-opportunity" element={<ArbOpportunity />} />
+          <Route path="nft-minting" element={<NftMinting />} />
+          <Route path="nft-market" element={<NftMarket />} />
+          <Route path="nft-staking" element={<NftStaking />} />
+          <Route path="token-gated-contents" element={<TokenGatedContents />} />
+          <Route path="metaverse" element={<Metaverse />} />
           <Route
-            path="token_list/lock_record"
-            element={<LockRecordDetails />}
-          />{" "}
-          <Route
-            path="token_list/lock_record/:params"
-            element={<LockRecordDetails2 />}
-          />{" "}
-          <Route path="my_tokens" element={<MyTokens />} />
-          <Route path="lp_list" element={<LpLockList />} />
-          <Route path="token_create_success" element={<TokenCreateSuccess />} />
-          <Route path="edit_presale" element={<EditPresale />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+            path="how-to-join-whitelist"
+            element={<HowToJoinWhitelist />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

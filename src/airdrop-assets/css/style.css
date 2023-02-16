@@ -1,0 +1,405 @@
+
+html{
+	font-size: 62.5%;
+}
+body{	
+	font-size: 1.6rem;
+    font-family: 'Oxygen Mono', monospace;
+    font-weight: 400;
+    background: #52544AF0;
+    color: #FFF;
+
+		/*   font-family: 'Inter', sans-serif;
+		 		 font-family: 'Oxygen', sans-serif;   */
+}
+h1,h2,h3,h4,h5,h6,p{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul li a,a{
+	text-decoration: none;
+}
+h1 {
+	font-size: 44px;
+}
+h2{
+	font-size: 30px;
+}
+/*===========================  Start Simple Task Section  ===========================*/
+.simple_task_main {
+	padding: 100px 0px 15px 0px;
+}
+.banner_image img{
+	width: 100%;
+	height: auto;
+}
+.banner_image {
+	margin-bottom: 115px;
+}
+.simple_task_title h1{
+	text-align: center;
+}
+.simple_task_content_title h2{
+	padding: 150px 0px 80px 0px;
+	text-align: center;
+	color: #FFF;
+}
+.simple_task_contents {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	max-width: 1250px;
+	margin: auto;
+	margin-bottom: 120px;
+}
+.smptscon_left a {
+	font-size: 10px;
+	display: inline-block;
+	color: #FFF;
+	text-align: center;
+}
+.smptscon_left a img {
+	width: 150px;
+	height: auto;
+	display: block;
+	margin: auto;
+	margin-top: 50px;
+}
+.smptscon_middle p {
+	background: #202430;
+	color: #FFF;
+	text-align: center;
+	font-size: 39px;
+	max-width: 415px;
+	padding: 15px 10px;
+	line-height: 50px;
+}
+.smptscon_left {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 33.33%;
+	        flex: 0 0 33.33%;
+}
+.smptscon_leftde{
+	text-align: right;
+	padding-right: 50px;
+}
+.smptscon_middle {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 33.33%;
+	        flex: 0 0 33.33%;
+}
+/*===========================  End Simple Task Section  ===========================*/
+
+/*===========================  Start CLAIM AIRDROP Section  ===========================*/
+.claim_airdrop_tbtn a {
+	text-align: center;
+	color: #FFF;
+	font-size: 33px;
+	background: rgba(199, 31, 41, 0.34);
+	border: 5px solid rgba(23, 3, 3, 0.51);
+	border-radius: 46px;
+	padding: 12px 100px;
+	margin-bottom: 50px;
+	display: inline-block;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+.claim_airdrop_tbtn a:hover{
+	background: transparent;
+}
+.claim_airdrop_title h1 {
+	color: #FFF;
+	text-align: center;
+}
+.claim_airdrop_contents_all {
+	padding: 40px 50px 60px 50px;
+	background: rgba(41, 39, 39, 0.35);
+	border-radius: 15px;
+	text-align: center;
+	max-width: 83%;
+	margin: auto;
+	margin-top: 50px;
+}
+.claim_airdrop_content_title h1 {
+	font-size: 35px;
+	margin: 25px 0px 100px 0px;
+}
+.claim_airdrop_content_title h1 span{
+	color: #16E2D6;
+}
+.claim_airdrop_contents_mw{
+	max-width: 1100px;
+	margin: auto;
+}
+.claim_airdrop_contents {
+	background: rgba(19, 42, 100, 0.57);
+	border: 4px solid rgba(0, 0, 0, 0.56);
+	border-radius: 40px;
+	padding: 20px 60px 40px 60px;
+	margin: 10px 0px 100px 0px;
+}
+.claim_airdrop_contents_single{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.claiconsi_p p {
+	font-size: 25px;
+	color: #FFF;
+}
+.claim_airdrop_contents_single {
+	margin-top: 10px;
+}
+.claim_airdrop_contents_single p{
+	margin-top: 5px;
+}
+.claim_airdrop_btns {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	max-width: 90%;
+	margin: auto;
+	margin-top: 45px;
+}
+.claim_airdropbtn_left p {
+	background: -o-linear-gradient(top, rgba(37, 109, 101, 0) 0%, rgba(53, 206, 188, 0.04) 0.01%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(37, 109, 101, 0)), color-stop(0.01%, rgba(53, 206, 188, 0.04)));
+	background: linear-gradient(180deg, rgba(37, 109, 101, 0) 0%, rgba(53, 206, 188, 0.04) 0.01%);
+	border: 3px solid rgba(0, 0, 0, 0.49);
+	border-radius: 10px;
+	width: 210px;
+	height: 95px;
+	font-size: 33px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.claim_airdropbtn_right a {
+	margin-left: 15px;
+	border-radius: 40px;
+	background: rgba(253, 233, 234, 0.34);
+	border: 3px solid rgba(0, 0, 0, 0.51);
+	color: #FFF;
+	padding: 9px 25px;
+	font-size: 25px;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+.claim_airdropbtn_right a:hover{
+	background: -o-linear-gradient(top, rgba(37, 109, 101, 0) 0%, rgba(53, 206, 188, 0.04) 0.01%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(37, 109, 101, 0)), color-stop(0.01%, rgba(53, 206, 188, 0.04)));
+	background: linear-gradient(180deg, rgba(37, 109, 101, 0) 0%, rgba(53, 206, 188, 0.04) 0.01%);
+}
+.claim_airdropbtn_right a:first-child{
+	margin-left: 0px;
+}
+/*===========================  End CLAIM AIRDROP Section  ===========================*/
+
+/*===========================  Start REDEEM AIRDROP Section  ===========================*/
+.redeem_airdrop_main {
+	padding: 120px 0px 170px 0px;
+}
+.redeem_airdrop {
+	background: #4F5056;
+	padding: 65px 50px 110px 50px;
+	border-radius: 10px;
+	max-width: 1000px;
+	margin: auto;
+}
+.redeem_airdrop_title h1 {
+	text-align: center;
+	color: #FD0D0D;
+	font-size: 37px;
+}
+.redeem_airdrop_content_title h1 {
+	text-align: center;
+	margin-top: 70px;
+	color: #FFF;
+	font-size: 37px;
+}
+.redaircon_cont{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.redeem_airdrop_contents {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	max-width: 620px;
+	margin: auto;
+	margin-top: 70px;
+}
+.redaircon_cont_title p {
+	font-size: 32px;
+	margin-bottom: 5px;
+}
+.redaircon_cont_box p {
+	font-size: 32px;
+	background: -o-linear-gradient(top, rgba(30, 49, 47, 0.04) 0%, rgba(37, 109, 101, 0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 49, 47, 0.04)), to(rgba(37, 109, 101, 0)));
+	background: linear-gradient(180deg, rgba(30, 49, 47, 0.04) 0%, rgba(37, 109, 101, 0) 100%);
+	border: 3px solid rgba(0, 0, 0, 0.49);
+	border-radius: 71px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 8px 30px;
+}
+.redaircon_cont_amount {
+	margin-top: 70px;
+}
+.redaircon_cont_amount span {
+	font-size: 32px;
+}
+.redaircon_cont_amount input {
+	font-size: 32px;
+	background: -o-linear-gradient(top, rgba(30, 49, 47, 0.04) 0%, rgba(37, 109, 101, 0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 49, 47, 0.04)), to(rgba(37, 109, 101, 0)));
+	background: linear-gradient(180deg, rgba(30, 49, 47, 0.04) 0%, rgba(37, 109, 101, 0) 100%);
+	border: 3px solid rgba(0, 0, 0, 0.49);
+	border-radius: 50px;
+	width: 220px;
+	height: 65px;
+	color: #FFF;
+	padding: 5px;
+}
+.redaircon_arrow img {
+	width: 155px;
+	height: auto;
+	margin-top: 60px;
+}
+.redaircon_cont_amount a {
+	background: -o-linear-gradient(top, rgba(30, 49, 47, 0.04) 0%, rgba(37, 109, 101, 0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 49, 47, 0.04)), to(rgba(37, 109, 101, 0)));
+	background: linear-gradient(180deg, rgba(30, 49, 47, 0.04) 0%, rgba(37, 109, 101, 0) 100%);
+	border: 3px solid rgba(0, 0, 0, 0.49);
+	border-radius: 50px;
+	color: #FFF;
+	font-size: 32px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	padding: 8px 30px;
+}
+.redaircon_cont_amount a:hover{
+	background: rgba(253, 233, 234, 0.34);
+}
+.claim_airdrop_btns.claim_airdrop_btns_top {
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.claim_airdropbtn_left.claim_airdropbtn_left_top p {
+	border-radius: 31px;
+	width: 211px;
+	height: 74px;
+	font-size: 33px;
+	margin-right: 100px;
+}
+.claim_airdropbtn_right_top a img {
+	width: 40px;
+	height: auto;
+}
+.claim_airdropbtn_right.claim_airdropbtn_right_top a {
+	margin-left: 17px;
+	border-radius: 30px;
+	padding: 11px 16px 13px 20px;
+}
+.redaircon_cont_first {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.redaircon_cont_amount1{
+	position: relative;
+}
+.redaircon_cont_amount1::after {
+	position: absolute;
+	content: "Amount";
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	right: 103%;
+	color: #FFF;
+	font-size: 30px;
+}
+
+
+
+
+
+
+/*===========================  End REDEEM AIRDROP Section  ===========================*/
+
+
+
+
+
+
+
+

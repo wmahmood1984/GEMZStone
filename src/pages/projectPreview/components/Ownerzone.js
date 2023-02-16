@@ -30,7 +30,7 @@ const Ownerzone = ({data,toggle,setToggle}) => {
     setOpen(true);
     setTitle("Finalizing...")
     try {
-      const tx1 = await myContract.finalize({gasLimit:30000000});
+      const tx1 = await myContract.finalize({gasLimit:3000000});
 
       await tx1.wait();
 

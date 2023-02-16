@@ -7,7 +7,8 @@ import Web3 from "web3";
 import { Layout } from "../../components";
 import ListItem from "../../components/listItem";
 import { tokenLockLauncherAbi, tokenLocklauncherAdd } from "../../config";
-import { shortAddress } from "../../helpers";
+import { shortAddress } from "../../web3/helpers";
+
 
 const LockDetails = () => {
    const days = ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"]

@@ -5,7 +5,7 @@ import { BiChevronDown, BiSearch } from "react-icons/bi";
 import Launchpad from "./Launchpad";
 import { Link, useNavigate } from "react-router-dom";
 import { Contract, ethers, providers, utils } from "ethers";
-import { LaunchPadABI, LaunchPadAdd, rpcObj } from "../../config";
+import { chainIdSelected, LaunchPadABI, LaunchPadAdd, rpcObj } from "../../config";
 import { useWeb3React } from "@web3-react/core";
 import Web3 from "web3";
 import { toast } from "react-toastify";
@@ -28,7 +28,7 @@ import {
 
 const Home = () => {
   const { account, library, chainId } = useWeb3React();
-  const chain = chainId ? chainId : chainIdSelected
+  const currentChain = chainId ? chainId : chainIdSelected
   const [Data, setData] = useState();
   const [subData, setSubtData] = useState();
   const web3 = chainId ?  new Web3(

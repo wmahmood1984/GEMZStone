@@ -1,0 +1,1905 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Oxygen+Mono&family=Oxygen:wght@300;400;700&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem !important;
+  font-family: "Oxygen Mono", monospace !important;
+  font-weight: 400;
+
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: "Oxygen", sans-serif !important; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li a,
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+h1 {
+  font-size: 65px;
+}
+h2 {
+  font-size: 28px !important;
+  color: #fff;
+}
+h3 {
+  font-size: 36px;
+  color: #fff;
+}
+.border_style {
+  border: 5px solid #f2994a;
+  border-radius: 10px;
+  background: rgba(41, 39, 39, 0.35);
+}
+h5 {
+  font-size: 19px;
+  color: #fff;
+}
+/*//////////////////////////////////////////// Start Main Page ////////////////////////////////////////////*/
+/*===========================  Start Left Site  ===========================*/
+.frontpage_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*.frontpage_main {
+	display: flex;
+	max-width: 2000px;
+	margin: auto;
+}*/
+.left_site_main {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 15%;
+  flex: 0 0 15%;
+  background: url(../images/background.jpg);
+  background-size: cover;
+  padding: 70px 20px 120px 20px;
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.left_site_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.left_site_menu ul {
+  text-align: center;
+}
+.left_site_menu ul li a {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  position: relative;
+}
+.left_site_menu ul li a:hover {
+  color: #f2994a;
+}
+.left_site_menu .active {
+  color: #f2994a;
+}
+/*.left_site_menu ul li:first-child a,.left_site_tabs button:nth-child(1) {
+	margin-bottom: 45px;
+}*/
+/* .left_site_menu ul li:last-child a,
+.left_site_tabs button:last-child,
+.left_site_tabs a:last-child {
+  margin-top: 50px;
+} */
+/*.left_site_menu ul li a::after {
+	position: absolute;
+	content: "";
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	height: 0px;
+	background: #FFF;
+	transition: 0.2s;
+}
+.left_site_menu ul li a:hover::after{
+	height: 2px;
+}*/
+.left_site_social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 280px;
+  margin: auto;
+}
+.left_site_social ul li a {
+  display: inline-block;
+}
+.left_site_social ul li a img {
+  width: 32px;
+  height: auto;
+}
+.left_site_social {
+  padding-top: 230px;
+}
+/*Start Mobile Menu icon*/
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+  width: 28px;
+  height: 23px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 0px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+#nav-icon4 span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon4 span:nth-child(2) {
+  top: 8px;
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon4 span:nth-child(3) {
+  top: 16px;
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon4.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -2px;
+  left: 2px;
+}
+#nav-icon4.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+#nav-icon4.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 18px;
+  left: 2px;
+}
+/*End Mobile Menu icon*/
+.mobile_menu {
+  display: none;
+  position: absolute;
+  top: 35px;
+}
+.mobile_menu a i {
+  color: #fff;
+  font-size: 25px;
+  border: 1px solid #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: 40px;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.mobile_menu a {
+  display: inline-block;
+}
+.mobile_menu a:hover i {
+  color: #f2994a;
+  border: 1px solid #f2994a;
+}
+.left_site_hide_btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.left_site_hide_btn a i {
+  color: #fff;
+  font-size: 25px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.left_site_hide_btn a:hover i {
+  color: #f2994a;
+}
+.left_site_tabs button,
+.left_site_tabs a {
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  /*max-width: 180px;
+	margin: auto;*/
+  text-align: left;
+  margin-bottom: 27px;
+}
+.left_site_tabs a {
+  line-height: 1.15;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #f2994a !important;
+  background-color: transparent !important;
+}
+.left_site_tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: #f2994a;
+}
+.btnimgfl img {
+  width: 29px;
+  height: auto;
+  /* margin-right: 5px;, */
+}
+.btnimgfl {
+  display: none;
+}
+.btnimgfltoggle {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.lstabs_dropdown {
+  /*	text-align: center;*/
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 27px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.lstabs_dropdown:hover {
+  color: #f2994a;
+}
+.lstabs_dropdownhc {
+  color: #f2994a;
+}
+.logo_main {
+  margin-bottom: 40px;
+  /*display: flex;
+	margin-bottom: 50px;
+	justify-content: space-around;*/
+}
+.logo_main a img {
+  width: 100%;
+  height: auto;
+}
+/*.logo_img img{
+	width: 40px;
+	height: auto;
+}
+.logo_texts {
+	padding-top: 8px;
+	margin-left: 5px;
+	text-align: right;
+	color: #FD1313;
+}
+.logo_texts h4 {
+	font-size: 18px;
+}
+.logo_texts p{
+	font-size: 13px;
+}*/
+
+/*===========================  End Left Site  ===========================*/
+
+/*===========================  Start Right Site  ===========================*/
+.right_site_main {
+  -webkit-box-flex: 0;
+  -ms-flex: 1 0 82%;
+  flex: 1 0 85%;
+  /*background: rgba(127, 17, 224, 1);*/
+  background: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 80px 10px;
+  height: 100vh;
+  overflow-y: scroll;
+  color: #fff;
+}
+.right_site_main_width {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+}
+.frontpage_right_site {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.right_site_title_contents {
+  background: rgba(18, 15, 15, 0.44);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  margin-top: 22px;
+}
+.right_site_title_text {
+  text-align: center;
+}
+.right_site_title_text p {
+  color: #fff;
+  font-size: 16px;
+}
+.right_site_title_contents_boxs_all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.right_site_title_contents_boxs_all ul li {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 9px;
+}
+.right_site_title_contents_single p {
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+}
+
+.right_site_self_maining {
+  margin-top: 60px;
+  padding: 0px 15px 15px 15px;
+  color: #fff;
+}
+.right_site_self_maining h3 {
+  text-align: center;
+}
+.right_site_self_maining_middle ul li {
+  font-size: 17px;
+}
+.right_site_self_maining_middle img {
+  width: 250px;
+  height: auto;
+}
+.rssmm_f {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 20px 0px 5px 0px;
+}
+.right_site_self_maining_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.right_site_self_maining_btns a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  padding: 10px 0px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  color: #f63793;
+  font-size: 18px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.right_site_self_maining_btns a:first-child {
+  color: #fff;
+  font-size: 25px;
+}
+.right_site_self_maining_btns a:hover {
+  background: rgba(242, 153, 74, 0.1);
+}
+
+.right_site_exchange_all {
+  /*	margin: 15px 0px 10px 0px;*/
+}
+.right_site_exchange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.right_site_exchange_single {
+  /* flex: 0 0 24%; */
+  text-align: center;
+  color: #fff;
+  padding: 10px 5px 15px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 260px;
+  margin-top: 10px;
+}
+.right_site_exchange_single1st p:last-child {
+  margin-top: 15px;
+}
+.right_site_exchange_single1st {
+  padding: 0px;
+}
+.right_site_exchange_single p {
+  font-size: 13px;
+}
+.right_site_exchange_single h5 {
+  font-size: 19px;
+}
+.right_site_exchange_single a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(41, 39, 39, 0.35);
+  border: 2px solid #f2994a;
+  border-radius: 13px;
+  padding: 8px 5px;
+  width: 145px;
+  font-size: 13px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.right_site_exchange_single a:hover {
+  background: rgba(242, 153, 74, 0.1);
+}
+.right_site_exchange_single h4 {
+  font-size: 26px;
+}
+.rscslbtn a {
+  border: 5px solid #f2994a;
+  font-size: 19px;
+  width: 200px;
+  padding: 10px 0px;
+}
+.right_site_exchange_single1st {
+  display: inherit;
+}
+.right_site_exchange2 {
+  /*	margin-top: 10px;*/
+}
+.rscslbtn2 a {
+  width: 100%;
+  padding: 0px;
+  font-size: 17px;
+  padding: 2px 5px;
+}
+
+.right_site_tokenbridge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.right_site_tokenbridge_left {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 49%;
+  flex: 0 0 49%;
+}
+.right_site_tokenbridge_right {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 49%;
+  flex: 0 0 49%;
+}
+.right_site_tokenbridge_right {
+  margin-top: 10px;
+  padding: 10px 5px 5px 5px;
+}
+.rstrc_title h5 {
+  text-align: center;
+}
+.rstrc_contents {
+  max-width: 400px;
+}
+.rstrc_contents p {
+  color: #fff;
+  font-size: 14px;
+}
+.rstrc_contents p:first-child {
+  margin-top: 10px;
+}
+.rstrcc_mt {
+  margin-top: 20px;
+}
+.rstrc_title2 h5 {
+  color: #f57676;
+}
+
+.right_site_metaverse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.right_site_metaverse_right {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 74.5%;
+  flex: 0 0 74.5%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+}
+.rsmr_left,
+.fsmr_right {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 48%;
+  flex: 0 0 48%;
+  color: #fff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.fsmr_right img {
+  width: 100%;
+  height: auto;
+}
+.rsmr_left h4 {
+  font-size: 30px;
+}
+.rsmet_bs a {
+  font-size: 23px;
+  width: 185px;
+  padding: 10px;
+  border: 5px solid #f2994a;
+}
+.rsmr_left p {
+  font-size: 22px;
+  margin: 15px 0px;
+}
+.right_site_metaverse_right a {
+  width: 185px;
+  padding: 10px;
+  border: 5px solid #f2994a;
+  font-size: 23px;
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  background: rgba(41, 39, 39, 0.35);
+}
+.right_site_metaverse_right a:hover {
+  background: rgba(242, 153, 74, 0.1);
+}
+
+.right_site_lock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.rslobox p {
+  font-size: 18px;
+}
+.rslobox {
+  height: 260px;
+}
+.rslobox {
+  height: 340px;
+}
+.rslockboxs {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+  width: 259px;
+  text-align: center;
+  margin-top: 10px;
+}
+.rslockboxs h4 {
+  font-size: 26px;
+}
+.rslockboxs_mm {
+  margin: 20px 0px;
+}
+.rslockboxs_mm2 {
+  margin: 30px 0px;
+}
+
+.right_site_download_app p {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 35px;
+  color: #fff;
+  line-height: 45px;
+}
+
+/*===========================  End Right Site  ===========================*/
+/*//////////////////////////////////////////// End Main Page ////////////////////////////////////////////*/
+
+/*/////////////////////////////////////// Start Fair-Launch Page ///////////////////////////////////////*/
+.fprs_fairlaunch_title h3 {
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 70px;
+  font-family: "Inter", sans-serif !important;
+}
+.fprs_fairlaunch_contents p {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500;
+  font-size: 27px;
+  text-align: center;
+  color: #fff;
+  margin-top: 30px;
+}
+.fprs_fairlaunch_contents p span {
+  font-size: 35px;
+}
+.fprs_fairlaunch_btns a {
+  font-size: 19px;
+  color: #f63793;
+  background: rgba(41, 39, 39, 0.35);
+  border: 5px solid #f2994a;
+  border-radius: 10px;
+  padding: 12px 5px 10px 5px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.fprs_fairlaunch_btns a:hover {
+  background: rgba(242, 153, 74, 0.1);
+}
+.fprs_fairlaunch_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 140px;
+  margin-bottom: 140px;
+}
+/*/////////////////////////////////////// End Fair-Launch Page ///////////////////////////////////////*/
+
+/*////////////////////////////////// Start How-To-Be-White-Listed Page //////////////////////////////////*/
+.htbwhitelisted {
+  margin: 200px 0px 140px 0px;
+}
+.htbwhitelisted_title {
+  text-align: center;
+}
+.htbwhitelisted_title p {
+  font-size: 23px;
+  color: #fff;
+}
+.htbwhitelisted_title h4 {
+  color: #fd3d3d;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.htbwhitelisted_contents {
+  text-align: center;
+}
+.htbwhitelisted_contents p {
+  color: #fff;
+  font-size: 23px;
+}
+.htbwhitelisted_contentsfp {
+  margin: 20px 0px 25px 0px;
+}
+.htbwhitelisted_contents_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.htbwhitelisted_contents_flex2 {
+  margin-bottom: 50px;
+}
+.htbwhitelisted_contents_lp {
+  margin-top: 130px;
+}
+.htbwhitelisted_contents_lp p {
+  color: #fd3d3d;
+}
+.htbwhitelisted_btns {
+  max-width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.htbwhitelisted_btns:last-child a {
+  max-width: 400px;
+  text-align: center;
+}
+/*////////////////////////////////// End How-To-Be-White-Listed Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start Self-Mining Page //////////////////////////////////*/
+.self_mining_page {
+  background: rgba(18, 15, 15, 0.44);
+  border-radius: 10px;
+  padding: 35px 55px;
+  margin-top: 35px;
+}
+.htbwhitelisted.self_mining_main {
+  margin: 0px;
+}
+.lmclp {
+  margin: 20px 0px;
+}
+.self_mining_btns {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+.sm_contents_flex p,
+.smcon p {
+  font-size: 20px;
+}
+.smconfp {
+  margin: 20px 0px 10px 0px;
+}
+.self_mining_box_title p {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+.self_mining_box {
+  margin-top: 80px;
+  max-width: 415px;
+  width: 100%;
+  /* background: rgba(41, 39, 39, 0.35); */
+  border-radius: 25px;
+  position: relative;
+}
+.self_mining_boxs_all {
+  max-width: 930px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.self_mining_single_box {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 28px;
+  padding: 15px 15px;
+  color: #fff;
+  background: rgba(41, 39, 39, 0.35);
+}
+.self_mining_single_box_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: rgba(19, 100, 100, 0.57);
+  border: 5px solid rgba(0, 0, 0, 0.56);
+  border-radius: 22px;
+  padding: 15px 0px;
+}
+.self_mining_single_box_title p {
+  text-align: center;
+  max-width: 160px;
+}
+.self_mining_single_box_contents {
+  margin: 25px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.smsbc_left p {
+  font-size: 32px;
+  background: -o-linear-gradient(
+    top,
+    rgba(30, 49, 47, 0.04) 0%,
+    rgba(37, 109, 101, 0) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(30, 49, 47, 0.04)),
+    to(rgba(37, 109, 101, 0))
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(30, 49, 47, 0.04) 0%,
+    rgba(37, 109, 101, 0) 100%
+  );
+  border: 5px solid rgba(0, 0, 0, 0.49);
+  border-radius: 46px;
+  padding: 20px 30px;
+}
+.smsbc_right img {
+  width: 110px;
+  height: auto;
+}
+.self_mining_single_box_btns a {
+  text-align: center;
+  color: #fff;
+  background: rgba(196, 196, 196, 0.57);
+  border: 5px solid rgba(0, 0, 0, 0.76);
+  border-radius: 46px;
+  padding: 4px 10px;
+  font-size: 13px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.self_mining_single_box_btns a:hover {
+  background: transparent;
+}
+.self_mining_single_box_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.smsblp p {
+  margin-top: 5px;
+}
+/*.self_mining_box_title {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}*/
+.smsb_approve {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.smsb_approve_left input {
+  background: rgba(196, 196, 196, 0.57);
+  border: 5px solid rgba(0, 0, 0, 0.76);
+  border-radius: 46px;
+  color: #fff;
+}
+.smsb_approve_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.smsb_approve_right a {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  margin: 0px 5px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.smsb_approve_right a:hover {
+  color: #f2994a;
+}
+.self_mining_premium_rigs {
+  max-width: 750px;
+  margin: auto;
+  margin-top: 110px;
+  color: #fff;
+  text-align: center;
+}
+.self_mining_premium_rigs p {
+  background: #e46868;
+  border: 5px solid rgba(0, 0, 0, 0.56);
+  border-radius: 46px;
+  padding: 20px;
+  font-size: 18px;
+}
+.smsbc_right2 img {
+  width: 160px;
+  height: auto;
+}
+/*////////////////////////////////// End Self-Mining Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start Locked Staking Page //////////////////////////////////*/
+.locked_staking_title {
+  margin: 90px 0px 0px 0px;
+  text-align: center;
+}
+.locked_staking_title h2 {
+  color: #ff1212;
+  font-size: 50px;
+}
+.locked_staking_title p {
+  font-size: 30px;
+  color: #d73d33;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.locked_staking_box_title h1 {
+  color: #ff1212;
+  margin-bottom: 10px;
+}
+.locked_staking_mainbox {
+  margin: 150px 0px 0px 0px;
+}
+.locked_staking_box {
+  background: #363636;
+  padding: 25px 55px 15px 55px;
+  border-radius: 10px;
+}
+.locked_staking_box_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.locked_staking_box_title p {
+  color: #fff;
+}
+.locked_staking_box_title p:nth-child(1) {
+  margin-right: 50px;
+}
+.locked_staking_box_title p:nth-child(2) {
+  margin-right: 100px;
+}
+.locked_staking_box_contents_all {
+  max-width: 700px;
+  margin: auto;
+  color: #fff;
+}
+.locked_staking_box_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.locked_staking_box_contents ul li {
+  color: #fff;
+  font-size: 20px;
+}
+.locked_staking_box_amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.locked_staking_box_amount p:nth-child(2) {
+  margin-left: 100px;
+}
+.locked_staking_box_amount p {
+  font-size: 18px;
+}
+.locked_staking_box_amount_input input {
+  border: none;
+  background: #ecc7c7;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+  margin-top: 8px;
+}
+.locked_staking_box_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.locked_staking_box_btns a {
+  width: 200px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #fff;
+  background: #175360;
+  border-radius: 10px;
+  font-size: 25px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.locked_staking_box_btns a:hover {
+  background: #237688;
+}
+/*////////////////////////////////// End Locked Staking Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start NFT Minting Page //////////////////////////////////*/
+.nft_minting_main {
+  background: rgba(126, 190, 249, 0.19);
+  margin-top: 100px;
+  padding: 30px 40px 20px 40px;
+}
+.nft_minting_main_title h3 {
+  color: #fff;
+  text-align: center;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600;
+  font-size: 45px;
+}
+.nft_minting_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.nft_minting_cleft {
+  max-width: 100%;
+  width: 100%;
+  padding-right: 30px;
+}
+.nft_minting_cleft_title p {
+  text-align: center;
+  font-size: 35px;
+  font-family: "Oxygen", sans-serif !important;
+  font-weight: 700;
+  color: #61ccc6;
+  margin-top: 30px;
+}
+.nft_minting_cleft_ml_p p {
+  width: 92px;
+  text-align: center;
+  color: #e34c4c;
+  padding: 5px 0px 5px 0px;
+  background: #61ccc6;
+  border-radius: 20px;
+  font-size: 15px;
+  font-family: "Oxygen", sans-serif !important;
+  font-weight: 700;
+}
+.nft_minting_cleft_ml_add_remove {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nft_minting_cleft_ml_add_remove a img {
+  width: 21px;
+  height: auto;
+}
+.nft_minting_cleft_ml_add_remove a:nth-child(1) img {
+  width: 13px;
+  height: auto;
+}
+.nft_minting_cleft_ml_add_remove a {
+  width: 55px;
+  height: 45px;
+  background: #396666;
+  border-radius: 0px 40px 40px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.nft_minting_cleft_ml_add_remove a:nth-child(1) {
+  border-radius: 40px 0px 0px 40px;
+}
+.nft_minting_cleft_ml_add_remove input {
+  width: 110px;
+  font-size: 15px;
+}
+.nft_minting_cleft_ml_p {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.nft_minting_cleft_ml {
+  width: 225px;
+  margin-top: 90px;
+}
+.nft_minting_cleft_ml_add_remove {
+  margin: 15px 0px;
+}
+.nft_minting_cleft_ml_btns {
+  max-width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.nft_minting_cleft_ml_btns a {
+  color: #fff;
+  width: 85px;
+  padding: 6px 0px 5px 0px;
+  background: #d9d9d9;
+  color: #e34c4c;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Oxygen", sans-serif !important;
+  font-weight: 700;
+  border-radius: 20px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.nft_minting_cleft_ml_btns a:hover {
+  background: #c6c1c1;
+}
+.nft_minting_cleft_middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.nft_minting_cleft_middle_btns a {
+  text-align: center;
+  display: inline-block;
+  padding: 5px 10px;
+  color: #61ccc6;
+  font-size: 14px;
+  max-width: 100%;
+  width: 100%;
+}
+.nft_minting_cleft_middle_btns a span {
+  font-size: 11px;
+  margin-top: 0px;
+  display: block;
+}
+.nft_minting_cleft_middle_btns a:nth-child(2) {
+  width: 320px;
+}
+.nft_minting_cleft_middle_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: rgba(16, 68, 62, 0.62);
+  border-radius: 35px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+/*.mftmcmbtns1{
+	padding-top: 25px;
+}*/
+.nft_minting_cright {
+  max-width: 260px;
+  width: 100%;
+  margin-top: 90px;
+}
+.nft_minting_cright_img img {
+  width: 100%;
+  height: auto;
+}
+.nft_minting_cright_contents {
+  background: rgba(63, 40, 206, 0.38);
+  border-radius: 40px;
+  color: #fff;
+  padding: 7px 10px;
+  text-align: center;
+  margin-top: -48px;
+  position: relative;
+  z-index: 3;
+}
+.nft_minting_cright_contents p {
+  font-size: 22px;
+  font-family: "Inter", sans-serif !important;
+}
+.nft_minting_cright_contents p:nth-child(2) {
+  font-size: 25px;
+  color: #ad0505;
+  margin-top: 10px;
+}
+.nft_minting_cons_and_btns {
+  max-width: 750px;
+  margin: auto;
+  margin-top: 45px;
+}
+.nft_minting_cab_contents p {
+  text-align: center;
+  color: #cc0b0b;
+  background: rgba(19, 21, 21, 0.62);
+  border-radius: 75px;
+  padding: 10px 30px;
+  font-size: 22px;
+  font-family: "Oxygen", sans-serif !important;
+  font-weight: 700;
+}
+.nft_minting_cleft_bbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.nft_minting_cleft_bbtn a {
+  text-align: center;
+  display: inline-block;
+  margin-top: 40px;
+  color: #61ccc6;
+  background: rgba(16, 68, 62, 0.62);
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 30px;
+}
+/*////////////////////////////////// End NFT Minting Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start NFT Staking Page //////////////////////////////////*/
+.nft_staking_title h1 {
+  color: #ff1212;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+.nft_staking_img img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+.nft_staking_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.nft_staking_btns {
+  max-width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.nft_staking_btns a {
+  background: #d9d9d9;
+  padding: 4px 30px 0px 30px;
+  border-radius: 5px;
+  color: #e26767;
+  font-size: 35px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.nft_staking_btns a:hover {
+  opacity: 0.8;
+}
+.nft_staking_contents p {
+  margin-top: 130px;
+  font-size: 46px;
+  color: #f15a5a;
+  text-align: center;
+}
+/*////////////////////////////////// End NFT Staking Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start Margin Trade Upto 5X Page //////////////////////////////////*/
+.margin_trade_title h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #ff1212;
+  margin: 100px 0px 120px 0px;
+}
+.margin_trade_image_and_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.margin_trade_img img {
+  max-width: 680px;
+  width: 100%;
+  height: auto;
+}
+.margin_trade_btn {
+  max-width: 100%;
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.margin_trade_btn a {
+  background: #d9d9d9;
+  padding: 4px 30px 0px 30px;
+  border-radius: 5px;
+  color: #e26767;
+  font-size: 32px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  width: 100%;
+}
+.margin_trade_box {
+  background: #363636;
+  padding: 0px 30px 40px 30px;
+  max-width: 372px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+.margin_trade_box h3 {
+  font-size: 30px;
+}
+.margin_trade_box2 h3 {
+  margin: 100px 0px;
+}
+
+/*////////////////////////////////// End Margin Trade Upto 5X Page //////////////////////////////////*/
+
+.margin_trade_boxp {
+  margin: 25px 0px;
+}
+.token_bridge_box h3 {
+  margin-top: 20px;
+}
+.trade_bridge_title h1 {
+  color: #fff;
+}
+.crosschain_swap_img img {
+  max-width: 480px;
+}
+.arb_opportunity_title h1 {
+  font-size: 40px;
+  color: #fff;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600;
+}
+
+.arb_opportunity_single {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.arb_opportunity_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+.arpopptitle p {
+  font-size: 25px;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600;
+}
+.arboppbox p {
+  background: #323030;
+  width: 150px;
+  text-align: center;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 25px;
+  margin: 10px 0px 15px 0px;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600;
+}
+.arboppbtn a {
+  background: #0d850b;
+  color: #fff;
+  padding: 8px 14px;
+  display: inline-block;
+  border-radius: 9px;
+  font-size: 11px;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.arboppbtn a:hover {
+  opacity: 0.8;
+}
+.arboppbtn_pare {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.arboppbtnbg a {
+  background: #dd1d1d;
+  margin-left: 10px;
+}
+/*////////////////////////////////// Start Orderbook Exchange Page //////////////////////////////////*/
+.orderbook_exchange_title h1 {
+  color: #fff;
+  margin: 100px 0px 0px 0px;
+  text-align: center;
+}
+.orderbook_exchangesbcons_left img {
+  max-width: 550px;
+  width: 100%;
+  height: auto;
+}
+.orderbook_exchangesb_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.orderbook_exchangesb_title p {
+  text-align: center;
+  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.orderbook_exchangesb_title p span {
+  color: #ff1212;
+  font-size: 35px;
+  padding-left: 20px;
+}
+.orderbook_exchange_single_box {
+  margin-top: 100px;
+}
+.orderbook_exchange_page {
+  padding-bottom: 50px;
+}
+.orderbook_exchangesbcons_right {
+  margin-top: 0px;
+}
+/*////////////////////////////////// End Orderbook Exchange Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start NFT Market Page //////////////////////////////////*/
+.nft_marketsbcon_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.nft_marketsbcon_img a img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+.nft_market_single_box {
+  margin-top: 100px;
+}
+.nft_market_single_box_title h1 {
+  color: #09215f;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.nft_marketsbcon_img p {
+  color: #ff1212;
+  font-size: 25px;
+}
+.nft_market_single_box_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.nft_market_btnbox {
+  margin-top: 30px;
+}
+.nft_market_btnbox h3 {
+  margin-bottom: 50px;
+}
+.nft_marketsbcon_img2 img {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  max-width: 450px;
+  margin: 30px 0px;
+}
+/*////////////////////////////////// End NFT Market Page //////////////////////////////////*/
+
+/*////////////////////////////////// Start SWAP AND LP Page //////////////////////////////////*/
+.swap_and_lp_title {
+  margin: 80px 0px 0px 0px;
+}
+.swap_and_lp_title h1 {
+  color: #fff;
+  text-align: center;
+}
+.swap_and_lp_content_single {
+  max-width: 250px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+.swap_and_lp_content_single_img img {
+  width: 100%;
+}
+.swap_and_lp_content_single_title p {
+  font-size: 22px;
+  max-width: 210px;
+  line-height: 28px;
+}
+.swap_and_lp_content_single_title span {
+  color: #ff1212;
+  font-size: 22px;
+}
+.swap_and_lp_content_single_title {
+  margin-bottom: 10px;
+}
+.swap_and_lp_content_single_btn a {
+  background: #d9d9d9;
+  color: #e26767;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  border-radius: 10px;
+  margin-top: 25px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  line-height: 36px;
+}
+.swap_and_lp_content_single_btn {
+  max-width: 200px;
+  width: 100%;
+}
+.swap_and_lp_content_single_btn a:hover {
+  opacity: 0.8;
+}
+.swap_and_lp_contents_all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.swap_and_lp_title2 {
+  margin: 100px 0px 0px 0px;
+}
+.swap_and_lp_page_last_contents {
+  margin: 100px 0px 60px 0px;
+}
+.swap_and_lp_page_last_contents h3 {
+  color: #f15a5a;
+  text-align: center;
+}
+/*////////////////////////////////// End SWAP AND LP Page //////////////////////////////////*/
+
+.token_gated_content_title h1 {
+  color: #ff1212;
+}
+.tgcon_single {
+  margin-top: 60px;
+}
+.tgconlcon h3 {
+  font-size: 25px;
+}
+.token_gated_content_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.token_gated_content_title a {
+  display: inline-block;
+  font-size: 37px;
+  background: #d9d9d9;
+  color: #e26767;
+  padding: 4px 30px 0px 30px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  line-height: 50px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.token_gated_content_title a:hover {
+  opacity: 0.8;
+}
+
+.nav-pills a {
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.nav-pills a:hover {
+  color: #f2994a !important;
+}
+
+.nav-pills a.active {
+  color: #f2994a;
+}
+
+/*   font-family: 'Inter', sans-serif;
+		 font-family: 'Oxygen', sans-serif;   */
+
+.dropdown_container {
+  margin-bottom: 27px;
+}
+
+.nft_text {
+  text-transform: uppercase;
+}
+
+.nav-child a {
+  font-size: 15px !important;
+  margin-bottom: 27px;
+  display: block;
+  padding-left: 20px;
+}
+
+.nav-child a:first-child {
+  margin-top: 27px;
+}
+
+.nav-child a:last-child {
+  margin-bottom: 0;
+}
+
+.nft_text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
