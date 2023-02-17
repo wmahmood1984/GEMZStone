@@ -145,7 +145,7 @@ useEffect(()=>{
   return (
     <div>
       <title>Gemstone Project</title>
-      {account && account}
+
       <div className="main_parent frontpage_main">
         {/*########################################  Start Left Site  ########################################*/}
         {showMenu && width < 1200 && (
@@ -179,7 +179,7 @@ useEffect(()=>{
                 }}
                 className="lstabs_dropdown"
               >
-                CONNECT WALLET
+                {account  ? `${account.slice(0,5)}...${account.slice(-4)}` :"CONNECT WALLET"}
               </span>
               {showWallet && (
                 <div>
@@ -542,7 +542,7 @@ useEffect(()=>{
                 }}
                 className="lstabs_dropdown"
               >
-                CONNECT WALLET
+                {account  ? `${account.slice(0,5)}...${account.slice(-4)}` :"CONNECT WALLET"}
               </span>
 
               {showWallet && (
