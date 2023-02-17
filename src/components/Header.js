@@ -17,13 +17,13 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { Injected, WalletConnect } from "./connector";
 import { getContract } from "../utils";
-import { GEMZ, GEMZAbi } from "../config";
+import { GEMZ, GEMZAbi, RouterAbi, RouterAdd } from "../config";
 import { formatEther } from "ethers/lib/utils";
 import { Contract } from "ethers";
 import Web3 from "web3";
 
 var Header = function () {
-  const { activate, library,account } = useWeb3React();
+  const { activate, library,account,chainId } = useWeb3React();
   const useWindowSize = () => {
     const [size, setSize] = useState([0, 0]);
     React.useLayoutEffect(() => {
@@ -36,7 +36,7 @@ var Header = function () {
     }, []);
     return size;
   };
-  console.log("useWindowSize", useWindowSize()[0]);
+
   const width = useWindowSize()[0];
   const [showMenu, setShowMenu] = useState(true);
   const [showWallet, setShowWallet] = useState(false);
@@ -52,11 +52,13 @@ var Header = function () {
   const [allPool,setAllPool] = useState(0)
   const [unMined,setUnMined] = useState(0)
   const [EPD,setEPD] = useState(700)
+  const [Price,setPrice] = useState(0)
 
 
 
 const web3 = new Web3(Web3.givenProvider)
 const GEMZContract = new web3.eth.Contract(GEMZAbi,GEMZ)
+const Router = new web3.eth.Contract(RouterAbi,RouterAdd)
 
 
 
@@ -74,7 +76,9 @@ useEffect(()=>{
     console.log("data",formatEther(_cir))
     setCir(Number(formatEther(_cir)).toFixed(2))
     setUnMined(Number(formatEther(_cap) - formatEther(_cir) ).toFixed(2))
-
+    var path = ["0x37c281d357e628b0fd4590166d7d34e16003ad8f","0xae13d989dac2f0debff460ac112a837c89baa7cd"]
+    const _price = await Router.methods.getAmountsOut("1000000000000000000",path).call()
+    setPrice(Number(formatEther(_price[1])).toFixed(4))
   
     if(account){
     const _bal = await GEMZContract.methods.balanceOf(account).call()
@@ -135,11 +139,13 @@ useEffect(()=>{
   };
 
   console.log("Library", library);
+  console.log("Account", account);
+  console.log("Chain", chainId);
 
   return (
     <div>
       <title>Gemstone Project</title>
-
+      {account && account}
       <div className="main_parent frontpage_main">
         {/*########################################  Start Left Site  ########################################*/}
         {showMenu && width < 1200 && (
@@ -869,7 +875,7 @@ useEffect(()=>{
                   </ul>
                 </div>
                 <div className="right_site_title_contents_single">
-                  <p>GEMZS Price: $2.45</p>
+                  <p>GEMZS Price: ${Price && Price}</p>
                 </div>
                 <marquee behavior="scroll" direction="left" id="mymarquee">
                   <p>
