@@ -81,7 +81,7 @@ useEffect(()=>{
     const _price = await Router.methods.getAmountsOut("1000000000000000000",path).call()
 
     const _bnbPrice = await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
-    setPrice(Number(formatEther(_price[1])).toFixed(4) * Number(_bnbPrice.data.binancecoin.usd))
+    setPrice((Number(formatEther(_price[1])).toFixed(4) * Number(_bnbPrice.data.binancecoin.usd)).toFixed(6))
   //  console.log("Price in bnb",_bnbPrice)
 
 
