@@ -28,7 +28,7 @@ const GEMZContract = getContract(library,account,GEMZAbi,GEMZ)
 const IOUContract = getContract(library,account,GEMZIOAbi,GEMZIOU)
 const BUSDContract = getContract(library,account,GEMZAbi,BUSD)
 
-
+console.log("Library in minting",contract)
 
 
 
@@ -55,7 +55,7 @@ const abc = async ()=>{
 }
 abc()
 
-},[account,toggle])
+},[account,toggle,library])
 
 const findMax = (val,setVal,Price)=>{
   if(library){

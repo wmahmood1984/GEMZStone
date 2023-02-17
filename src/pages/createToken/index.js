@@ -125,7 +125,7 @@ const CreateToken = () => {
 
       const _fee = await myContract2.methods.feeForPooCreation().call();
       setfeePool(formatEther(_fee));
-      console.log("string", _fee);
+    //  console.log("string", _fee);
     };
 
     abc();

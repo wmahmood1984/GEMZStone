@@ -21,6 +21,7 @@ import { GEMZ, GEMZAbi, RouterAbi, RouterAdd } from "../config";
 import { formatEther } from "ethers/lib/utils";
 import { Contract } from "ethers";
 import Web3 from "web3";
+import axios from "axios";
 
 var Header = function () {
   const { activate, library,account,chainId } = useWeb3React();
@@ -73,13 +74,17 @@ useEffect(()=>{
 
     setCap(Number(formatEther(_cap)).toFixed(2))
     const _cir = await GEMZContract.methods.totalSupply().call()
-    console.log("data",formatEther(_cir))
+   // console.log("data",formatEther(_cir))
     setCir(Number(formatEther(_cir)).toFixed(2))
     setUnMined(Number(formatEther(_cap) - formatEther(_cir) ).toFixed(2))
     var path = ["0x37c281d357e628b0fd4590166d7d34e16003ad8f","0xae13d989dac2f0debff460ac112a837c89baa7cd"]
     const _price = await Router.methods.getAmountsOut("1000000000000000000",path).call()
-    setPrice(Number(formatEther(_price[1])).toFixed(4))
-  
+
+    const _bnbPrice = await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
+    setPrice(Number(formatEther(_price[1])).toFixed(4) * Number(_bnbPrice.data.binancecoin.usd))
+  //  console.log("Price in bnb",_bnbPrice)
+
+
     if(account){
     const _bal = await GEMZContract.methods.balanceOf(account).call()
     setWBalance(Number(formatEther(_bal)).toFixed(2))
@@ -138,9 +143,9 @@ useEffect(()=>{
     setShowDefi(false);
   };
 
-  console.log("Library", library);
-  console.log("Account", account);
-  console.log("Chain", chainId);
+  // console.log("Library", library);
+  // console.log("Account", account);
+  // console.log("Chain", chainId);
 
   return (
     <div>

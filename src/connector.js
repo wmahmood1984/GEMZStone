@@ -6,11 +6,13 @@ import QRCodeModal from "@walletconnect/qrcode-modal";
 //   supportedChainIds: [56, 97],
 // });
 export const WalletConnect = new WalletConnectConnector({
-  rpc: {
-//    1: "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213",
-    56: "https://bsc-dataseed.binance.org/",
-    97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-  },
+  rpc:"https://data-seed-prebsc-1-s1.binance.org:8545/" ,
+  
+//   {
+// //    1: "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213",
+//     56: "https://bsc-dataseed.binance.org/",
+//     97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+//   },
   supportedChainIds: [56, 97],
   bridge: "https://bridge.walletconnect.org",
   qrcode: true,
