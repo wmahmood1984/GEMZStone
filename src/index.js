@@ -8,7 +8,7 @@ import { Web3Provider } from "@ethersproject/providers";
 
 
 function getLibrary(provider) {
- // console.log("Provider in index",provider)
+  console.log("Provider in index",provider)
   const library = new Web3Provider(provider);
   library.pollingInterval = 12000;
   return library;

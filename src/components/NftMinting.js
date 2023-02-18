@@ -1,11 +1,22 @@
 import { useWeb3React } from "@web3-react/core";
+import { Contract } from "ethers";
 import { formatEther, formatUnits, parseEther,  } from "ethers/lib/utils";
 
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { BUSD, GEMZ, GEMZAbi, GEMZIOAbi, GEMZIOU, NFTABI, NFTAdd } from "../config";
 import ResponsiveDialog from "../Spinner";
-import { getContract } from "../utils";
+import Web3 from "web3";
+import { rpcObj, selectedId } from "../connector";
+
+
+export const getContract = (library, account, abi, tokenAdd) => {
+
+  const signer = library?.getSigner(account).connectUnchecked();
+  var contract = new Contract(tokenAdd, abi, signer);
+  return contract;
+};
+
 
 function NftMinting() {
 const [balance,setBalance] = useState(0)
@@ -18,44 +29,49 @@ const [GEMZIbalance,setGEMZIbalance] = useState(0)
 const [BUSD_,setBUSD_] = useState(0)
 const [GEMZ_,setGEMZ_] = useState(0)
 const [GEMZI_,setGEMZI_] = useState(0)
-
+const web3 = new Web3(new Web3.providers.HttpProvider(rpcObj[selectedId]))
 const {library,account,chainId} = useWeb3React()
 
+const contract = new web3.eth.Contract(NFTABI,NFTAdd)
+const GEMZContract = new web3.eth.Contract(GEMZAbi,GEMZ)
+const IOUContract = new web3.eth.Contract(GEMZIOAbi,GEMZIOU)
+const BUSDContract = new web3.eth.Contract(GEMZAbi,BUSD)
 
 
-const contract = getContract(library,account,NFTABI,NFTAdd)
-const GEMZContract = getContract(library,account,GEMZAbi,GEMZ)
-const IOUContract = getContract(library,account,GEMZIOAbi,GEMZIOU)
-const BUSDContract = getContract(library,account,GEMZAbi,BUSD)
 
-console.log("Library in minting",contract)
+
 
 
 
 useEffect(()=>{
 const abc = async ()=>{
+
   if(account){
-    const _bal = await contract.balanceOf(account)
+    const _bal = await contract.methods.balanceOf(account).call()
+
     setBalance(formatUnits (_bal,0))
-    const _BUSDBal = await BUSDContract.balanceOf(account)
+    const _BUSDBal = await BUSDContract.methods.balanceOf(account).call()
 
     setBUSDbalance(formatEther (_BUSDBal,0))
-    const _GEMZbal = await GEMZContract.balanceOf(account)
+    const _GEMZbal = await GEMZContract.methods.balanceOf(account).call()
     setGEMZbalance(formatEther (_GEMZbal,0))
-    const _GEMZIbalance = await IOUContract.balanceOf(account)
+    const _GEMZIbalance = await IOUContract.methods.balanceOf(account).call()
     setGEMZIbalance(formatEther (_GEMZIbalance,0))
 
-    const _tSupply = await contract.create_amount()
-    settotalSupply(formatUnits(_tSupply,0))
+
 
   }
 
+
+  const _tSupply = await contract.methods.create_amount().call()
+  console.log("Library in minting",_tSupply)
+  settotalSupply(formatUnits(_tSupply,0))
 
 
 }
 abc()
 
-},[account,toggle,library])
+},[account,toggle])
 
 const findMax = (val,setVal,Price)=>{
   if(library){
@@ -70,35 +86,55 @@ const findMax = (val,setVal,Price)=>{
 }
 
 const approveBUSD = async ()=>{
-  setOpen(true)
-  try {
-    const tx1 = await BUSDContract.approve(NFTAdd,parseEther((BUSD_*39).toString()), {gasLimit:300000})
 
-    const receipt = await tx1.wait()
-    
-    if(receipt){
+  const _BUSDContract = getContract(library,account,GEMZAbi,BUSD)
+  const allowance = await BUSDContract.methods.allowance(account,NFTAdd).call()
+
+  if(Number(formatEther(allowance)) >= BUSD_*39){
+    MintBUSD()
+  }else{
+    setOpen(true)
+    try {
+      const tx1 = await _BUSDContract.approve(NFTAdd,parseEther((BUSD_*39).toString()), {gasLimit:300000})
+  
+      const receipt = await tx1.wait()
+      
+      if(receipt){
+        setOpen(false)
+        setToggle(!toggle)
+  //      MintBUSD()
+      }
+  
+  
+    } catch (error) {
+      console.log("error in approval",error)
       setOpen(false)
-      setToggle(!toggle)
-      MintBUSD()
     }
-
-
-  } catch (error) {
-    console.log("error in approval",error)
-    setOpen(false)
   }
+
+
+ 
 }
 const approveGEMZ = async ()=>{
+
+  const _GEMZContract = getContract(library,account,GEMZAbi,GEMZ)
+  const allowance = await GEMZContract .methods.allowance(account,NFTAdd).call()
+
+  if(Number(formatEther(allowance)) >= GEMZ_*200){
+     MintGEMZ()
+  }else{
+
+
   setOpen(true)
   try {
-    const tx1 = await GEMZContract.approve(NFTAdd,parseEther((GEMZ_*200).toString()), {gasLimit:300000})
+    const tx1 = await _GEMZContract.approve(NFTAdd,parseEther((GEMZ_*200).toString()), {gasLimit:300000})
 
     const receipt = await tx1.wait()
-    
+    console.log("receipt ",receipt)  
     if(receipt){
       setOpen(false)
       setToggle(!toggle)
-      MintGEMZ()
+//      MintGEMZ()
     }
 
 
@@ -106,18 +142,26 @@ const approveGEMZ = async ()=>{
     console.log("error in approval",error)
     setOpen(false)
   }
+}
 }
 const approveGEMZI = async ()=>{
+
+  const _IOUContract = getContract(library,account,GEMZIOAbi,GEMZIOU)
+  const allowance = await IOUContract.methods.allowance(account,NFTAdd).call()
+
+  if(Number(formatEther(allowance)) >= GEMZ_*200){
+     MintGEMZ()
+  }else{
   setOpen(true)
   try {
-    const tx1 = await IOUContract.approve(NFTAdd,parseEther((GEMZI_*300).toString()), {gasLimit:300000})
+    const tx1 = await _IOUContract.approve(NFTAdd,parseEther((GEMZI_*300).toString()), {gasLimit:300000})
 
     const receipt = await tx1.wait()
     
     if(receipt){
       setOpen(false)
       setToggle(!toggle)
-      MintGemzI()
+//      MintGemzI()
     }
 
 
@@ -126,10 +170,12 @@ const approveGEMZI = async ()=>{
     setOpen(false)
   }
 }
+}
 const MintBUSD = async ()=>{
+  const _contract = getContract(library,account,NFTABI,NFTAdd)
   setOpen(true)
   try {
-    const tx1 = await contract.mint_busd(BUSD_.toString(),{gasLimit:300000})
+    const tx1 = await _contract.mint_busd(BUSD_.toString(),{gasLimit:300000})
 
     const receipt = await tx1.wait()
     
@@ -145,6 +191,7 @@ const MintBUSD = async ()=>{
   }
 }
 const MintGEMZ = async ()=>{
+  const contract = getContract(library,account,NFTABI,NFTAdd)
   setOpen(true)
   try {
     const tx1 = await contract.mint_gemzs(GEMZ_.toString(),{gasLimit:300000})
@@ -162,7 +209,9 @@ const MintGEMZ = async ()=>{
     setOpen(false)
   }
 }
+
 const MintGemzI = async ()=>{
+  const contract = getContract(library,account,NFTABI,NFTAdd)
   setOpen(true)
   try {
     const tx1 = await contract.mint_gemzsiou(GEMZI_.toString(), {gasLimit:300000})
@@ -180,6 +229,11 @@ const MintGemzI = async ()=>{
     setOpen(false)
   }
 }
+
+  console.log("Library", library);
+  console.log("Account", account);
+  console.log("Chain", chainId);
+
 
 
 

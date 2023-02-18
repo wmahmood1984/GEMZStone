@@ -4,11 +4,22 @@ import "../airdrop-assets/css/responsive.css";
 
 import "../airdrop-assets/css/normalize.css";
 import { useWeb3React } from "@web3-react/core";
-import { getContract } from "../utils";
+
 import { aidrDropAdd, airDropAbi, GEMZ, GEMZAbi, GEMZIOAbi, GEMZIOU } from "../config";
 
 import ResponsiveDialog from "../Spinner";
 import { formatEther, formatUnits } from "ethers/lib/utils";
+import { Contract } from "ethers";
+import Web3 from "web3";
+import { rpcObj, selectedId } from "../connector";
+
+
+export const getContract = (library, account, abi, tokenAdd) => {
+
+  const signer = library?.getSigner(account).connectUnchecked();
+  var contract = new Contract(tokenAdd, abi, signer);
+  return contract;
+};
 
 function Airdrop() {
 const [balance,setBalance] = useState(0)
@@ -20,23 +31,25 @@ const [uEarnings,setuEarnings] = useState(0)
 const [wIbalance,setwIBalance] = useState(0)
 const [noOfParticipants,setnoOfParticipants] = useState(0)
 const {chainId,library,account} = useWeb3React()
-const contract = getContract(library,account,airDropAbi,aidrDropAdd)
-const GEMZContract = getContract(library,account,GEMZAbi,GEMZ)
-const IOUContract = getContract(library,account,GEMZIOAbi,GEMZIOU)
+const web3 = new Web3(new Web3.providers.HttpProvider(rpcObj[selectedId]))
+const contract = new web3.eth.Contract(airDropAbi,aidrDropAdd)
+const GEMZContract = new web3.eth.Contract(GEMZAbi,GEMZ)
+const IOUContract = new web3.eth.Contract(GEMZIOAbi,GEMZIOU)
+
 
 useEffect (() => {
   const abc = async ()=>{
     
-    const _bal = await GEMZContract.balanceOf(aidrDropAdd)
-    const _Ibal = await IOUContract.balanceOf(aidrDropAdd)
+    const _bal = await GEMZContract.methods.balanceOf(aidrDropAdd).call()
+    const _Ibal = await IOUContract.methods.balanceOf(aidrDropAdd).call()
     setBalance(Number(formatEther(_bal)).toFixed(2))
     setIBalance(Number(formatEther(_Ibal)).toFixed(2))
     if(account){
-      const _wbal = await GEMZContract.balanceOf(account)
-      const _wIbal = await IOUContract.balanceOf(account)
+      const _wbal = await GEMZContract.methods.balanceOf(account).call()
+      const _wIbal = await IOUContract.methods.balanceOf(account).call()
       setWBalance(Number(formatEther(_wbal)).toFixed(2))
       setwIBalance(Number(formatEther(_wIbal)).toFixed(2))
-      const _earnings = await contract.userEarnings(account)
+      const _earnings = await contract.methods.userEarnings(account).call()
       setuEarnings(Number(formatEther(_earnings)).toFixed(2))
     }
 
@@ -44,7 +57,7 @@ useEffect (() => {
 
 
 
-    const _participants = await contract.getNumberOfParticipants()
+    const _participants = await contract.methods.getNumberOfParticipants().call()
     setnoOfParticipants(formatUnits(_participants,0))
 
   }
@@ -52,10 +65,16 @@ useEffect (() => {
   abc()
 }, [toggle,account])
 
+
+
 const _approve = async ()=>{
+ const _contract = getContract(library,account,airDropAbi,aidrDropAdd)
+
+
+
   setOpen(true)
   try {
-    const tx1 = await contract.addMe({gasLimit:300000})
+    const tx1 = await _contract.addMe({gasLimit:300000})
 
     const receipt = await tx1.wait()
     
@@ -74,9 +93,10 @@ const _approve = async ()=>{
 
 
 const _claim = async ()=>{
+  const _contract = getContract(library,account,airDropAbi,aidrDropAdd)
   setOpen(true)
   try {
-    const tx1 = await contract.claimRewards({gasLimit:300000})
+    const tx1 = await _contract.claimRewards({gasLimit:300000})
 
     const receipt = await tx1.wait()
     

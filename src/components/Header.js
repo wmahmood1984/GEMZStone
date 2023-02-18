@@ -65,9 +65,9 @@ const Router = new web3.eth.Contract(RouterAbi,RouterAdd)
 
 
 useEffect(()=>{
-  if(localStorage.getItem("Connected")){
-    activate(Injected)
-  }
+  // if(localStorage.getItem("Connected")){
+  //   activate(Injected)
+  // }
   const abc = async ()=>{
    
     const _cap = await GEMZContract.methods.cap().call()
@@ -81,8 +81,8 @@ useEffect(()=>{
     const _price = await Router.methods.getAmountsOut("1000000000000000000",path).call()
 
     const _bnbPrice = await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
-    setPrice((Number(formatEther(_price[1])).toFixed(4) * Number(_bnbPrice.data.binancecoin.usd)).toFixed(6))
-  //  console.log("Price in bnb",_bnbPrice)
+    setPrice(Number(Number(formatEther(_price[1])).toFixed(8) *_bnbPrice.data.binancecoin.usd).toFixed(4))
+    console.log("Price in bnb",_bnbPrice)
 
 
     if(account){
@@ -143,9 +143,6 @@ useEffect(()=>{
     setShowDefi(false);
   };
 
-  // console.log("Library", library);
-  // console.log("Account", account);
-  // console.log("Chain", chainId);
 
   return (
     <div>

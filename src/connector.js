@@ -5,19 +5,27 @@ import QRCodeModal from "@walletconnect/qrcode-modal";
 // export const injected = new InjectedConnector({
 //   supportedChainIds: [56, 97],
 // });
+
+export const rpcObj =  {
+    1: "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213",
+    56: "https://bsc-dataseed.binance.org/",
+    97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+  }
+
+export const selectedId = 97;
 export const WalletConnect = new WalletConnectConnector({
-  rpc:"https://data-seed-prebsc-1-s1.binance.org:8545/" ,
-  
-//   {
-// //    1: "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213",
-//     56: "https://bsc-dataseed.binance.org/",
-//     97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-//   },
+  rpc: {
+    // 1: "https://mainnet.infura.io/v3/84842078b09946638c03157f83405213",
+    56: "https://bsc-dataseed.binance.org/",
+    97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+  },
   supportedChainIds: [56, 97],
   bridge: "https://bridge.walletconnect.org",
   qrcode: true,
-  pollingInterval: 12000,
-  qrcodeModal: QRCodeModal
+  pollingInterval: 5000,
+  qrcodeModal: QRCodeModal,
+  chainId: 97,
+  projectId:"b925b1972c5b791221c0f873204ebe63"
 });
 
 export const CoinbaseWallet = new WalletLinkConnector({
