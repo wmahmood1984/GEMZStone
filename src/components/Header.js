@@ -68,6 +68,8 @@ useEffect(()=>{
   // if(localStorage.getItem("Connected")){
   //   activate(Injected)
   // }
+
+  var interval 
   const abc = async ()=>{
    
     const _cap = await GEMZContract.methods.cap().call()
@@ -77,12 +79,25 @@ useEffect(()=>{
    // console.log("data",formatEther(_cir))
     setCir(Number(formatEther(_cir)).toFixed(2))
     setUnMined(Number(formatEther(_cap) - formatEther(_cir) ).toFixed(2))
+    
+    
     var path = ["0x37c281d357e628b0fd4590166d7d34e16003ad8f","0xae13d989dac2f0debff460ac112a837c89baa7cd"]
     const _price = await Router.methods.getAmountsOut("1000000000000000000",path).call()
 
     const _bnbPrice = await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
     setPrice(Number(Number(formatEther(_price[1])).toFixed(8) *_bnbPrice.data.binancecoin.usd).toFixed(4))
-    console.log("Price in bnb",_bnbPrice)
+    console.log("Price in bnb",_bnbPrice)   
+
+
+    interval = setInterval(async () => {
+      var path = ["0x37c281d357e628b0fd4590166d7d34e16003ad8f","0xae13d989dac2f0debff460ac112a837c89baa7cd"]
+      const _price = await Router.methods.getAmountsOut("1000000000000000000",path).call()
+  
+      const _bnbPrice = await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
+      setPrice(Number(Number(formatEther(_price[1])).toFixed(8) *_bnbPrice.data.binancecoin.usd).toFixed(4))
+      console.log("Price in bnb",_bnbPrice)
+    }, 10000);
+
 
 
     if(account){
@@ -92,8 +107,10 @@ useEffect(()=>{
   
   }
   abc()
+
+  return ()=>{clearInterval(interval)}
   
-  },[account])
+  },[account,Price])
 
 
 
@@ -142,6 +159,9 @@ useEffect(()=>{
     setExchange(false);
     setShowDefi(false);
   };
+
+
+  console.log("Price",Price)
 
 
   return (
